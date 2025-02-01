@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// Establece el enlace directo sin utilizar variables de entorno
-const baseURL = 'https://correccion-prueba-backend-jsxm9etqx.vercel.app';
+// Usa import.meta.env.MODE en lugar de process.env.NODE_ENV
+const baseURL = import.meta.env.MODE === 'development'
+	? 'http://localhost:3001'
+	: 'https://correccion-prueba-backend-jsxm9etqx.vercel.app';
+// Alternativamente, si defines VITE_API_URL en Vercel: 
+// const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 axios.defaults.baseURL = baseURL;
 console.log('Backend URL:', axios.defaults.baseURL);
 
