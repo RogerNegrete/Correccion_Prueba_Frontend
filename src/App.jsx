@@ -7,6 +7,15 @@ const baseURL = 'https://correccion-prueba-backend-jsxm9etqx.vercel.app';
 axios.defaults.baseURL = baseURL;
 console.log('Backend URL:', axios.defaults.baseURL);
 
+// Agrega un interceptor para ver detalles del error
+axios.interceptors.response.use(
+  response => response,
+  error => {
+    console.error('Detalle del error de axios:', error);
+    return Promise.reject(error);
+  }
+);
+
 function App() {
     const [items, setItems] = useState([]);
     const [busqueda, setBusqueda] = useState('');
