@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// Si cambiaste el puerto en el backend, actualiza esta línea:
-axios.defaults.baseURL = 'http://localhost:3001'; // o el puerto que hayas elegido
+// Configura la URL base usando la variable de entorno, definida en Vercel
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001'; // o el puerto que hayas elegido
 
 function App() {
     const [items, setItems] = useState([]);
