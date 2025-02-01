@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// Remueve una posible barra final de la URL base
-const baseURL = process.env.REACT_APP_BACKEND_URL?.replace(/\/$/, '') || 'http://localhost:3001';
+// Usa import.meta.env.VITE_BACKEND_URL en lugar de process.env.REACT_APP_BACKEND_URL
+const baseURL = import.meta.env.VITE_BACKEND_URL?.replace(/\/$/, '') || 'http://localhost:3001';
 axios.defaults.baseURL = baseURL;
 console.log('Backend URL:', axios.defaults.baseURL);
 
