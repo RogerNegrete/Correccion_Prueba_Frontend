@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// Usa la variable de entorno VITE_API_URL para forzar la URL en producción
-const baseURL = import.meta.env.VITE_API_URL || (import.meta.env.MODE === 'development'
-	? 'http://localhost:3001'
-	: 'https://correccion-prueba-backend-jsxm9etqx.vercel.app');
+// Usa únicamente la variable de entorno
+const baseURL = import.meta.env.VITE_API_URL 
+	|| 'https://correccion-prueba-backend-jsxm9etqx.vercel.app';
 axios.defaults.baseURL = baseURL;
 console.log('Backend URL:', axios.defaults.baseURL);
 
