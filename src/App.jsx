@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 // Forzar URL remota
-const baseURL = 'https://correccion-prueba-backend-jsxm9etqx.vercel.app';
+const baseURL = 'https://correccion-prueba-backend.vercel.app/';
 axios.defaults.baseURL = baseURL;
 console.log('Backend URL:', axios.defaults.baseURL);
 
