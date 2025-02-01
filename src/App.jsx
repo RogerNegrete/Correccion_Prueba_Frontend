@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// Agrega un console.log para confirmar la variable de entorno en producción
-console.log('VITE_BACKEND_URL:', import.meta.env.VITE_BACKEND_URL);
-
-// Usa import.meta.env.VITE_BACKEND_URL en lugar de process.env.REACT_APP_BACKEND_URL
-const baseURL = import.meta.env.VITE_BACKEND_URL?.replace(/\/$/, '') || 'http://localhost:3001';
+// Establece el enlace directo sin utilizar variables de entorno
+const baseURL = 'https://correccion-prueba-backend-jsxm9etqx.vercel.app';
 axios.defaults.baseURL = baseURL;
 console.log('Backend URL:', axios.defaults.baseURL);
 
