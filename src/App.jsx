@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// Usa únicamente la variable de entorno
-const baseURL = import.meta.env.VITE_API_URL 
-	|| 'https://correccion-prueba-backend-jsxm9etqx.vercel.app';
+// Forzar URL remota
+const baseURL = 'https://correccion-prueba-backend-jsxm9etqx.vercel.app';
 axios.defaults.baseURL = baseURL;
 console.log('Backend URL:', axios.defaults.baseURL);
 
